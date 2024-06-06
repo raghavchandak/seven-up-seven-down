@@ -1,0 +1,53 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0 2rem 0 2rem;
+}
+
+.card {
+  margin: 2rem;
+  background: linear-gradient(to right, #808080, #161b22);
+  width: 80%;
+}
+
+.dice {
+  margin-top: 5rem;
+  display: flex;
+}
+
+.icon {
+  height: 4rem;
+  width: 4rem;
+}
+
+#die1,
+#die2 {
+  border-radius: 10px;
+  flex: 1;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+  &.roll {
+    animation: roll 1s infinite;
+  }
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
