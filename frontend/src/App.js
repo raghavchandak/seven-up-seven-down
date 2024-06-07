@@ -104,76 +104,91 @@ function App() {
           </h2>
         </div>
       ) : null}
-      <div className="betsContainer">
-        <div className="bets">
-          <div className="upper-box" onClick={() => setBet(13)}>
-            <p>7 Up</p>
+      <div className="table">
+        <div className="betsContainer">
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginBottom: "2rem",
+            }}
+          >
+            <p style={{ fontWeight: "700", fontSize: "1rem" }}>
+              Choose Your Bet Amount:
+            </p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+                alignItems: "center",
+                height: "10vh",
+                marginTop: 0,
+                gap: "1rem",
+                flexWrap: "wrap"
+              }}
+            >
+              <Button
+                variant={betAmount === 100 ? "contained" : "outlined"}
+                onClick={() => handleBetAmount(100)}
+                className="betButton"
+              >
+                100
+              </Button>
+              <Button
+                variant={betAmount === 200 ? "contained" : "outlined"}
+                onClick={() => handleBetAmount(200)}
+                className="betButton"
+              >
+                200
+              </Button>
+              <Button
+                variant={betAmount === 500 ? "contained" : "outlined"}
+                onClick={() => handleBetAmount(500)}
+                className="betButton"
+              >
+                500
+              </Button>
+            </div>
           </div>
-          <div className="circle" onClick={() => setBet(7)}>
-            <p>7</p>
-          </div>
-          <div className="lower-box" onClick={() => setBet(1)}>
-            <p>7 Down</p>
+          <div className="bets">
+            <div className="upper-box" onClick={() => setBet(13)}>
+              <p>7 Up</p>
+            </div>
+            <div className="circle" onClick={() => setBet(7)}>
+              <p>7</p>
+            </div>
+            <div className="lower-box" onClick={() => setBet(1)}>
+              <p>7 Down</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        style={{ display: "flex", flexDirection: "column", marginTop: "2rem" }}
-      >
-        <p style={{ fontWeight: "700", fontSize: "1rem" }}>
-          Choose Your Bet Amount:
-        </p>
         <div
           style={{
+            height: "100%",
+            // backgroundColor: "red",
             display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
-            height: "10vh",
-            marginTop: 0,
-            gap: "1rem",
+            flexDirection: "column",
+            justifyContent: "flex-end",
+            alignItems: "center"
           }}
         >
           <Button
-            variant={betAmount === 100 ? "contained" : "outlined"}
-            onClick={() => handleBetAmount(100)}
-            className="betButton"
-          >
-            100
+            variant="contained"
+            onClick={handleRoll}
+            disabled={bet === 0 || betAmount === 0 || error}
+            >
+            Roll!
           </Button>
-          <Button
-            variant={betAmount === 200 ? "contained" : "outlined"}
-            onClick={() => handleBetAmount(200)}
-            className="betButton"
-          >
-            200
-          </Button>
-          <Button
-            variant={betAmount === 500 ? "contained" : "outlined"}
-            onClick={() => handleBetAmount(500)}
-            className="betButton"
-          >
-            500
-          </Button>
-        </div>
-      </div>
-      <div className="table">
-        <Button
-          variant="contained"
-          onClick={handleRoll}
-          disabled={bet === 0 || betAmount === 0 || error}
-          style={{ marginTop: "2.5rem" }}
-        >
-          Roll!
-        </Button>
-        <div className="dice" id="dice">
-          <div className={diceClass} id="die1">
-            <FontAwesomeIcon icon={`fa-dice-${face1}`} className="icon" />
-          </div>
-          <div className={diceClass} id="die2">
-            <FontAwesomeIcon
-              icon={["fas", `fa-dice-${face2}`]}
-              className="icon"
-            />
+          <div className="dice" id="dice">
+            <div className={diceClass} id="die1">
+              <FontAwesomeIcon icon={`fa-dice-${face1}`} className="icon" />
+            </div>
+            <div className={diceClass} id="die2">
+              <FontAwesomeIcon
+                icon={["fas", `fa-dice-${face2}`]}
+                className="icon"
+              />
+            </div>
           </div>
         </div>
       </div>
