@@ -75,6 +75,7 @@ function App() {
       if (action.payload === "Win!") setResult("Wohoo! You Won!");
       else setResult("Better Luck Next Time :(");
 
+      setTimeout(() => setResult(""), 4000);
       setBet(0);
       setBetAmount(0);
     }
@@ -85,7 +86,24 @@ function App() {
       <Card variant="solid" className="card">
         <h2>Current Points : {store.points}</h2>
       </Card>
-      {result !== "" && <h2 style={{position: "absolute", top: "15%"}}> {result} </h2>}
+      {result !== "" ? (
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            zIndex: "99",
+            padding: "10 20",
+            backgroundColor: "#1E2732",
+            borderRadius: "10px",
+            boxShadow: "10px 10px 5px rgba(0, 0, 0 , 0.3)",
+          }}
+        >
+          <h2 style={{ marginLeft: "1rem", marginRight: "1rem" }}>
+            {" "}
+            {result}{" "}
+          </h2>
+        </div>
+      ) : null}
       <div className="betsContainer">
         <div className="bets">
           <div className="upper-box" onClick={() => setBet(13)}>
@@ -102,7 +120,9 @@ function App() {
       <div
         style={{ display: "flex", flexDirection: "column", marginTop: "2rem" }}
       >
-        <p style={{fontWeight: "700", fontSize: "1rem"}}>Choose Your Bet Amount:</p>
+        <p style={{ fontWeight: "700", fontSize: "1rem" }}>
+          Choose Your Bet Amount:
+        </p>
         <div
           style={{
             display: "flex",
@@ -110,7 +130,7 @@ function App() {
             alignItems: "center",
             height: "10vh",
             marginTop: 0,
-            gap: "1rem"
+            gap: "1rem",
           }}
         >
           <Button
@@ -141,7 +161,7 @@ function App() {
           variant="contained"
           onClick={handleRoll}
           disabled={bet === 0 || betAmount === 0 || error}
-          style={{marginTop: "2.5rem"}}
+          style={{ marginTop: "2.5rem" }}
         >
           Roll!
         </Button>
@@ -157,64 +177,6 @@ function App() {
           </div>
         </div>
       </div>
-      {/* <h2>Place Your Bet</h2>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "2rem",
-        }}
-      >
-        <Button
-          variant={bet === 1 ? "contained" : "outlined"}
-          onClick={() => setBet(1)}
-        >
-          7 Down
-        </Button>
-        <Button
-          variant={bet === 7 ? "contained" : "outlined"}
-          onClick={() => setBet(7)}
-        >
-          7
-        </Button>
-        <Button
-          variant={bet === 13 ? "contained" : "outlined"}
-          onClick={() => setBet(13)}
-        >
-          7 Up
-        </Button>
-      </div>
-      <h2>Choose your Bet Amount:</h2>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          alignItems: "center",
-        }}
-      >
-        <Button
-          variant={betAmount === 100 ? "contained" : "outlined"}
-          onClick={() => handleBetAmount(100)}
-        >
-          100
-        </Button>
-        <Button
-          variant={betAmount === 200 ? "contained" : "outlined"}
-          onClick={() => handleBetAmount(200)}
-        >
-          200
-        </Button>
-        <Button
-          variant={betAmount === 500 ? "contained" : "outlined"}
-          onClick={() => handleBetAmount(500)}
-        >
-          500
-        </Button>
-      </div>
-
-      {error && <h2>You don't have enough points!</h2>} */}
     </div>
   );
 }
