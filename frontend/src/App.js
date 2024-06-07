@@ -49,9 +49,9 @@ function App() {
     setFace1(faces[num1 - 1]);
     setFace2(faces[num2 - 1]);
 
-    setTimeout(() => setDiceClass("die"), 1000);
+    setTimeout(() => setDiceClass("die"), 800);
 
-    setTimeout(() => checkResult(num1 + num2), 1200);
+    setTimeout(() => checkResult(num1 + num2), 1000);
   };
 
   const checkResult = async (diceSum) => {

@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as api from "../api";
 
 const initialState = {
-  points: 300,
+  points: 5000,
   result: "",
   loading: false,
   error: null,
