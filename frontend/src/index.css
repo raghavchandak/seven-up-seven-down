@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'Arial';
+  src: url('../public/fonts/ARLRDBD.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Impact';
+  src: url('../public/fonts/impact.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'American';
+  src: url('../public/fonts/American\ Typewriter\ Regular.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}

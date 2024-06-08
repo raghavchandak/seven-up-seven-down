@@ -4,8 +4,7 @@
   flex-direction: column;
   flex: 1;
   height: 100vh;
-  background-image: linear-gradient(#1e2732, rgba(0, 0, 0, 0.5)),
-    url("./assets/bg\ 1.png");
+  background-image: url("./assets/Artboard\ 8.png");
   color: white;
   align-items: center;
   font-family: Arial, sans-serif;
@@ -14,11 +13,17 @@
   position: relative;
 }
 
-.card {
-  margin: 2rem;
-  background: linear-gradient(to right, #1e2732, #161b22);
-  width: 80%;
-  height: 10vh;
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90vw;
+  margin: 1rem;
+}
+
+.points {
+  font-family: "Arial";
+  font-size: 1.25rem;
 }
 
 .table {
@@ -30,17 +35,19 @@
     linear-gradient(to right, #eccc9c, #633b0e, #eccc9c) border-box;
   border: 0.5rem solid transparent;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .betsContainer {
   position: absolute;
-  bottom: 100%;
-  left:25%;
+  bottom: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 50vh;
+  height: 60vh;
   /* background-color: red; */
 }
 
@@ -52,14 +59,32 @@
   font-family: Arial, sans-serif;
 }
 
+.bet-amount {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #14301f, #1d3d2e, #14301f);
+  padding: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  height: 15vh;
+}
+
+.bet-amount p {
+  font-size: 2rem;
+  font-family: "Impact";
+  margin-top: 0;
+  background: linear-gradient(to right, #641d1c, #af2c2c);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
 .upper-box {
-  border: 2px solid black;
-  border-radius: 20vw 20vw 0 0;
-  background-color: #223022;
-  width: 75vw;
+  border-radius: 50px 50px 0 0;
+  background: linear-gradient(to right, #641d1c, #af2c2c, #641d1c);
+  width: 250px;
   height: 15vh;
   color: aliceblue;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,11 +100,18 @@
   font-size: 1.5rem;
 }
 
+.upper-box p,
+.circle p,
+.lower-box p {
+  font-family: "American";
+  color: #eccc9c;
+  font-weight: bold;
+}
+
 .circle {
   height: 15vh;
   width: 15vh;
-  background: #1a212a;
-  border: 2px solid black;
+  background: radial-gradient(#b82e2f, #A32A29,#601c1b, #3C1414);
   border-radius: 50%;
   position: absolute;
   top: 25%;
@@ -98,11 +130,10 @@
 }
 
 .lower-box {
-  border: 2px solid black;
-  border-radius: 0 0 20vw 20vw;
-  background-color: #3d240a;
+  border-radius: 0 0 50px 50px;
+  background: linear-gradient(to right, #641d1c, #af2c2c, #641d1c);
   color: white;
-  width: 75vw;
+  width: 250px;
   height: 15vh;
   display: flex;
   justify-content: center;
@@ -137,8 +168,8 @@
 }
 
 .betButton {
-  height: 5rem;
-  width: 5rem;
+  height: 7vh;
+  width: 10vw;
 }
 
 @keyframes roll {
