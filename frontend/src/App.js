@@ -7,14 +7,15 @@ import { rollDice } from "./api";
 import { isFulfilled } from "@reduxjs/toolkit";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { StyledEngineProvider, CssVarsProvider } from "@mui/joy/styles";
+import ResultModal from "./components/resultModal";
+import BetAmount from "./components/betAmount";
+import Bet from "./components/bet";
+import { Link } from "react-router-dom";
 
 // FOR DICE ICONS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import ResultModal from "./components/resultModal";
-import BetAmount from "./components/betAmount";
-import Bet from "./components/bet";
 library.add(fas);
 
 const faces = ["one", "two", "three", "four", "five", "six"];
@@ -105,11 +106,20 @@ function App() {
       <div className="App">
         <div className="top-bar">
           <div style={{ display: "flex" }}>
+            <Link to="/">
+              <FontAwesomeIcon
+                icon="fa-solid fa-house"
+                style={{
+                  marginRight: "1rem",
+                  fontSize: "1.5rem",
+                  color: "white",
+                }}
+              />
+            </Link>
             <FontAwesomeIcon
-              icon="fa-solid fa-house"
-              style={{ marginRight: "0.5rem" }}
+              icon="fa-solid fa-gear"
+              style={{ fontSize: "1.5rem" }}
             />
-            <FontAwesomeIcon icon="fa-solid fa-gear" />
           </div>
           <div className="points">Points: {store.points}</div>
         </div>

@@ -160,6 +160,7 @@
 .icon {
   height: 3rem;
   width: 3rem;
+  color: aliceblue;
 }
 
 #die1,
@@ -177,11 +178,11 @@
   width: 6vw;
 }
 
-@keyframes roll {
+/* @keyframes roll {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
   }
-}
+} */
