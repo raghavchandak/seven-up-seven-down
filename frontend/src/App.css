@@ -4,7 +4,9 @@
   flex-direction: column;
   flex: 1;
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), #1A222B), url("./assets/IMG_0019.JPG");
+  min-height: -webkit-fill-available;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), #1a222b),
+    url("./assets/IMG_0019.JPG");
   color: white;
   align-items: center;
   font-family: Arial, sans-serif;
@@ -50,7 +52,6 @@
   align-items: center;
   justify-content: space-between;
   height: 60vh;
-
 }
 
 .bets {
@@ -114,7 +115,7 @@
 .circle {
   height: 15vh;
   width: 15vh;
-  background: radial-gradient(#b82e2f, #A32A29,#601c1b, #3C1414);
+  background: radial-gradient(#b82e2f, #a32a29, #601c1b, #3c1414);
   border: 3px solid #977245;
   border-radius: 50%;
   position: absolute;
@@ -170,6 +171,7 @@
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   &.roll {
     animation: roll 1s infinite;
+    -webkit-animation: roll 1s infinite;
   }
 }
 
@@ -181,8 +183,10 @@
 @keyframes roll {
   0% {
     transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
   }
 }

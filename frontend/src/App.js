@@ -1,16 +1,19 @@
 import "./App.css";
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { calculateResult, updatePoints } from "./redux/gameSlice";
 import { rollDice } from "./api";
 import { isFulfilled } from "@reduxjs/toolkit";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { StyledEngineProvider, CssVarsProvider } from "@mui/joy/styles";
+import { Link } from "react-router-dom";
+
+//COMPONENTS
 import ResultModal from "./components/resultModal";
 import BetAmount from "./components/betAmount";
 import Bet from "./components/bet";
-import { Link } from "react-router-dom";
+import Loader from "./components/loader";
 
 // FOR DICE ICONS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,10 +33,17 @@ function App() {
   const [result, setResult] = useState("");
   const [error, setError] = useState(false);
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // REDUX
   const dispatch = useDispatch();
   const store = useSelector((state) => state.game);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3500);
+  }, []);
 
   const handleBetAmount = (val) => {
     if (val <= store.points) {
@@ -101,7 +111,9 @@ function App() {
 
   const handleClose = () => setOpen(false);
 
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <ThemeProvider theme={theme}>
       <div className="App">
         <div className="top-bar">

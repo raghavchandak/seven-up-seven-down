@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/home.css";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import updown from "../assets/7updown.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
