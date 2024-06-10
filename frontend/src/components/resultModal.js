@@ -25,11 +25,17 @@ export default function ResultModal(props) {
             backgroundColor: "rgba(39, 85, 57, 0.5)",
             display: "flex",
             flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center"
           }}
         >
           <img
             src={result === "win" ? chicken : loser}
             alt="result"
+            style={{
+              maxHeight: "75%",
+              maxWidth: "75%",
+            }}
           />
           <button
             style={{

@@ -17,7 +17,6 @@
 }
 
 .info-container {
-  height: 60vh;
   background: linear-gradient(
     to right,
     rgba(39, 85, 57, 0.5),
@@ -29,7 +28,7 @@
   justify-content: space-around;
   align-items: center;
   max-width: 70vw;
-  padding: 0 1rem 0 1rem;
+  padding: 1rem;
 }
 
 .button {

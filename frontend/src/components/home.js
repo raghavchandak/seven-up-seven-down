@@ -16,8 +16,9 @@ function Home() {
             src={updown}
             alt="7 Up Down"
             style={{
-              maxHeight: "70%",
-              maxWidth: "70%",
+              maxHeight: "60%",
+              maxWidth: "60%",
+              marginBottom: "1rem"
             }}
           />
           <div className="dice" id="dice" style={{ marginTop: -10 }}>
@@ -36,9 +37,20 @@ function Home() {
               />
             </div>
           </div>
-          <Link to="/game">
-            <button className="button">Start</button>
-          </Link>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              color: "#B2B1B5",
+              marginTop: "1rem"
+            }}
+          >
+            <Link to="/game">
+              <button className="button">Start</button>
+            </Link>
+            <h3>How To Play</h3>
+          </div>
           <h3
             style={{ textAlign: "center", maxWidth: "70%", color: "#B2B1B5" }}
           >
